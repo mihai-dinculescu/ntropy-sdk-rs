@@ -1,10 +1,12 @@
-# Ntropy SDK
+# Experimental Ntropy SDK in Rust
 
-This repository hosts the SDK for the Ntropy API. To use the Ntropy API you require an API key which can be requested at [ntropy.com](https://ntropy.com).
+[![CI][ci_badge]][ci]
 
-The Ntropy API provides transaction enrichment and categorization, account ledger, metrics and custom model training. The full documentation is available at the [developer portal](https://developers.ntropy.com).
+This repository hosts an unofficial SDK for the Ntropy API. To use the Ntropy API you require an API key which can be requested at [ntropy.com][ntropy].
 
-## Running the examples
+The Ntropy API provides transaction enrichment and categorization, account ledger, metrics and custom model training. The full documentation is available at the [developer portal][developer_portal].
+
+## Running the [examples][examples]
 
 ```bash
 NTROPY_API_KEY=<api-key> cargo run --example enrich_transactions
@@ -32,10 +34,6 @@ cargo doc --package ntropy-sdk --open
 
 #### manual fixes
 
-##### `Cargo.toml`
-
-- change edition to 2021
-
 ##### `src/lib.rs`
 
 - Add `#![allow(clippy::all)]` to the top of the file
@@ -53,3 +51,9 @@ cargo doc --package ntropy-sdk --open
 ##### `src/models/transaction_error.rs`
 
 - change `pub error_details: Option<Box<crate::models::TransactionErrorErrorDetails>>,` to `pub error_details: Option<serde_json::Value>,`
+
+[ci_badge]: https://github.com/mihai-dinculescu/ntropy-sdk-rs/workflows/CI/badge.svg?branch=main
+[ci]: https://github.com/mihai-dinculescu/ntropy-sdk-rs/actions
+[ntropy]: https://ntropy.com
+[developer_portal]: https://developers.ntropy.com
+[examples]: https://github.com/mihai-dinculescu/ntropy-sdk-rs/tree/main/ntropy-sdk/examples
