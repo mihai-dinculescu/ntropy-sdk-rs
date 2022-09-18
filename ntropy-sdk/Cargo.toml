@@ -1,0 +1,11 @@
+[package]
+name = "ntropy-sdk"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ntropy-api-client = { path = "../ntropy-api-client" }
+reqwest = "0.11"
+serde_json = "1.0"
+thiserror = "1.0"
+tokio = { version = "1.21", default-features = false, features=["time", "sync", "rt-multi-thread", "macros"] }
